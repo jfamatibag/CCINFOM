@@ -34,6 +34,26 @@ CREATE TABLE `branch` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `branch`
+--
+
+LOCK TABLES `branch` WRITE;
+/*!40000 ALTER TABLE `branch` DISABLE KEYS */;
+INSERT INTO `branch` VALUES 
+('0000','BD - Cebu', '3rd Level, Ayala Center Cebu, Cebu Business Park', 'Cebu'),
+('1111','BD - Glorietta','Space 3-056, 3/F, New Glorietta, Ayala Center','Makati'),
+('2222','BD - One Ayala','Unit D-402, Level 4, One Ayala Mall, EDSA cor. Ayala Ave.','Makati'),
+('3333','BD - Trinoma','#1081, Level 1, Trinoma, EDSA cor. North Ave.', 'Quezon'),
+('4444','BD - Festival Supermall', 'Unit 4050, West Wing, 3/F, Festival Mall, Filinvest City, Alabang', 'Muntinlupa'),
+('5555','BD - Greenhills', 'Unit L435A-B, Level 4, Greenhills Mall', 'San Juan'),
+('6666','BD - Dumaguete','3rd Floor, Robinsons Dumaguete, Dumaguete Business Park, South Road, Calindagan 6200', 'Dumaguete'),
+('7777','BD - Antipolo','Upper Ground 230E & 230F, Sumulong cor. Circumferential Rd., Brgy. Dela Paz', 'Antipolo'),
+('8888', 'BD - Shangri-La', 'Lower Ground Level, Techno Hub, Shangri-La Plaza, EDSA cor. Shaw Blvd.' , 'Mandaluyong'),
+('9999', 'BD - Baguio', 'Unit 312, 3/F, SM City Baguio, Luneta Hill, Upper Session Rd.', 'Baguio');
+/*!40000 ALTER TABLE `branch` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `customer`
 --
 
