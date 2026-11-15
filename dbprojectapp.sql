@@ -71,6 +71,28 @@ CREATE TABLE `customer` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES 
+('19','Sang', 'Yi', '2024-01-01', '175'),
+('1', '', 'Faust', '2024-02-02', '174'),
+('16','Quixote', 'Don', '2024-02-02', '0'),
+('2','','Ryoshu', '2024-04-04', '0'),
+('14','', 'Meursault', '2024-05-05', '188'),
+('08','Lu', 'Hong', '2024-06-06', '0'),
+('20','','Heathcliff', '2024-07-07', '180'),
+('21','', 'Ishmael', '2024-08-08', '171'),
+('25' , 'Romanovich', 'Rodion', '2024-09-09', '183'),
+('11', 'Sinclair', 'Emil', '2024-11-11', '0'),
+('3', '', 'Outis', '2024-12-12', '175'),
+('7', '', 'Gregor', '2024-02-29', '167');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `game`
 --
 
@@ -89,6 +111,26 @@ CREATE TABLE `game` (
   CONSTRAINT `FK_game_branch` FOREIGN KEY (`branch_code`) REFERENCES `branch` (`branch_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `game`
+--
+
+LOCK TABLES `game` WRITE;
+/*!40000 ALTER TABLE `game` DISABLE KEYS */;
+INSERT INTO `game` VALUES 
+('120','0000', 'Persona 5', 'JRPG', '70', '1'),
+('121', '1111', 'Baldurs Gate 3', 'RPG', '50', '0'),
+('122', '2222', 'Elden Ring', 'ARPG', '100', '1'),
+('123', '3333', 'Grand Theft Auto VI', 'Sandbox', '10', '0'),
+('124', '4444', 'Minecraft', 'Sandbox', '1000', '1'),
+('125', '5555', 'Xenoblade 3', 'JRPG', '30', '0'),
+('126', '6666', 'Devil May Cry 5', 'ARPG', '40', '1'),
+('127', '7777', 'Metaphor: ReFantazio', 'JRPG', '700', '0'),
+('128', '8888', 'Teraria', 'Sandbox', '90', '1'),
+('129', '9999', 'Disco Elysium', 'RPG', '80', '0');
+/*!40000 ALTER TABLE `game` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales`
@@ -115,6 +157,36 @@ CREATE TABLE `sales` (
   CONSTRAINT `FK_sales_game` FOREIGN KEY (`game_code`, `branch_code`) REFERENCES `game` (`game_code`, `branch_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sales`
+--
+
+LOCK TABLES `sales` WRITE;
+/*!40000 ALTER TABLE `sales` DISABLE KEYS */;
+INSERT INTO `sales` VALUES 
+(1, 19, '120', '0000', '2024-01-15', 2995.00, 'JRPG', 1),
+(2, 1, '121', '1111', '2024-02-10', 5990.00, 'RPG', 2),
+(3, 16, '122', '2222', '2024-02-18', 2495.00, 'ARPG', 1),
+(4, 2, '123', '3333', '2024-04-12', 3995.00, 'Sandbox', 1),
+(5, 14, '124', '4444', '2024-05-20', 3190.00, 'Sandbox', 2),
+(6, 8, '125', '5555', '2024-06-14', 2895.00, 'JRPG', 1),
+(7, 20, '126', '6666', '2024-07-22', 1995.00, 'ARPG', 1),
+(8, 21, '127', '7777', '2024-08-09', 6990.00, 'JRPG', 2),
+(9, 25, '128', '8888', '2024-09-25', 995.00, 'Sandbox', 1),
+(10, 11, '129', '9999', '2024-11-16', 1795.00, 'RPG', 1),
+(11, 3, '120', '0000', '2024-12-20', 5990.00, 'JRPG', 2),
+(12, 7, '121', '1111', '2024-03-05', 2995.00, 'RPG', 1),
+(13, 19, '123', '3333', '2024-04-28', 3995.00, 'Sandbox', 1),
+(14, 16, '124', '4444', '2024-05-30', 1595.00, 'Sandbox', 1),
+(15, 8, '125', '5555', '2024-06-29', 5790.00, 'JRPG', 2),
+(16, 20, '127', '7777', '2024-08-19', 3495.00, 'JRPG', 1),
+(17, 25, '129', '9999', '2024-09-30', 3590.00, 'RPG', 2),
+(18, 11, '122', '2222', '2024-11-24', 4990.00, 'ARPG', 2),
+(19, 3, '126', '6666', '2024-12-27', 1995.00, 'ARPG', 1),
+(20, 7, '128', '8888', '2024-03-19', 1990.00, 'Sandbox', 2);
+/*!40000 ALTER TABLE `sales` ENABLE KEYS */;
+UNLOCK TABLES;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
