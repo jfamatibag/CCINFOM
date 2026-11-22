@@ -85,9 +85,9 @@ public class GameView {
             System.out.println("No games found in the database.");
             return;
         }
-
+        
         for (Game game : games) {
-            System.out.printf("\nGame Code: %d | Branch Code: %s |  Game Name: %s | Genre: %s | Stock: %d |  Discontinued: %b%n ",
+            System.out.printf("Game Code: %d | Branch Code: %s |  Game Name: %s | Genre: %s | Stock: %d |  Discontinued: %b\n",
                     game.getGameCode(), game.getBranchCode(), game.getGameName(), game.getGenre(), game.getQuantityInStock(), game.isDiscontinued());
         }
     }
