@@ -38,10 +38,11 @@ public class BranchManagement {
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-        	stmt.setString(1, branch.getBranchCode());
-            stmt.setString(2, branch.getBranchName());
-            stmt.setString(3, branch.getStreetAddress());
-            stmt.setString(4, branch.getCity());
+        	
+            stmt.setString(1, branch.getBranchName());
+            stmt.setString(2, branch.getStreetAddress());
+            stmt.setString(3, branch.getCity());
+            stmt.setString(4, branch.getBranchCode());
 
             return stmt.executeUpdate() > 0;
         }
