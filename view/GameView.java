@@ -54,10 +54,10 @@ public class GameView {
         while (true) {
             System.out.print(message);
             String input = scanner.nextLine().trim();
-            if (!input.isEmpty() && input.length() <= 5) {
+            if (!input.isEmpty() && input.length() == 4) {
                 return input;
             }
-            System.out.println("Invalid input! Branch code must be 1-5 characters.");
+            System.out.println("Invalid input! Branch code must be 4 characters.");
         }
     }
 
