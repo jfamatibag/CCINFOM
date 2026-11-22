@@ -47,9 +47,11 @@ public class BranchController {
 
             if (branchModel.add(branch)) {
             	branchView.displayMessage("Branch added successfully!");
+            } else {
+                branchView.displayMessage("Update failed.");
             }
         } catch (SQLIntegrityConstraintViolationException e) {
-            branchView.displayMessage("Error: Either the there are missing Branch details or the Branch Code is already taken.");
+            branchView.displayMessage("Error: Cannot remove this branch because it still has games or sales.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -68,9 +70,11 @@ public class BranchController {
 
             if (branchModel.edit(branch)) {
             	branchView.displayMessage("Branch updated successfully!");
+            } else {
+                branchView.displayMessage("Update failed.");
             }
         } catch (SQLIntegrityConstraintViolationException e) {
-        	branchView.displayMessage("Error: Either the there are missing Branch details or the Branch Code is already taken.");
+        	branchView.displayMessage("Error: Either the there are contradicting Branch details or the Branch Code is already taken.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
