@@ -105,7 +105,7 @@ public class GameView {
     }
 
     public void displayExit () {
-        System.out.println("Goodbye!");
+        System.out.println("Returning...");
     }
 
     public void displayInvalid () {

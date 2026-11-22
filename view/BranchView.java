@@ -82,7 +82,7 @@ public class BranchView {
     }
 
     public void displayExit () {
-        System.out.println("Goodbye!");
+        System.out.println("Returning...");
     }
 
     public void displayInvalid () {
