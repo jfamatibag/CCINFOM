@@ -43,7 +43,7 @@ public class BranchView {
         while (true) {
             System.out.print(message);
             String input = scanner.nextLine().trim();
-            if (!input.isEmpty()) {
+            if (!input.isEmpty() && (input.length() >= 1 || input.length() <= 5)) {
                 return input;
             }
             System.out.println("Invalid input! Branch code cannot be empty.");
@@ -72,7 +72,7 @@ public class BranchView {
         }
 
         for (Branch branch : branches) {
-            System.out.printf("Branch Code: %d | Branch Name: %s | Street Address: %s | City: %s\n",
+            System.out.printf("Branch Code: %s | Branch Name: %s | Street Address: %s | City: %s\n",
                     branch.getBranchCode(), branch.getBranchName(), branch.getStreetAddress(), branch.getCity());
         }
     }
