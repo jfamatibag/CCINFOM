@@ -100,7 +100,7 @@ DROP TABLE IF EXISTS `game`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `game` (
-  `game_code` varchar(5) NOT NULL,
+  `game_code` int(5) NOT NULL,
   `branch_code` varchar(5) NOT NULL,
   `game_name` varchar(100) NOT NULL,
   `genre` varchar(50) DEFAULT NULL,
@@ -142,7 +142,7 @@ DROP TABLE IF EXISTS `sales`;
 CREATE TABLE `sales` (
   `sale_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_number` int(11) NOT NULL,
-  `game_code` varchar(5) NOT NULL,
+  `game_code` int(5) NOT NULL,
   `branch_code` varchar(5) NOT NULL,
   `purchase_date` datetime NOT NULL,
   `amount_paid` double NOT NULL,
