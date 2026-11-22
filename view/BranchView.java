@@ -43,10 +43,10 @@ public class BranchView {
         while (true) {
             System.out.print(message);
             String input = scanner.nextLine().trim();
-            if (!input.isEmpty() && (input.length() >= 1 || input.length() <= 5)) {
+            if (!input.isEmpty() && input.length() == 4) {
                 return input;
             }
-            System.out.println("Invalid input! Branch code cannot be empty.");
+            System.out.println("Invalid input! Branch code must be 4 characters.");
         }
     }
 

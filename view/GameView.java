@@ -49,11 +49,19 @@ public class GameView {
             }
         }
     }
+    
+    public String promptBranchCode (String message) {
+        while (true) {
+            System.out.print(message);
+            String input = scanner.nextLine().trim();
+            if (!input.isEmpty() && input.length() <= 5) {
+                return input;
+            }
+            System.out.println("Invalid input! Branch code must be 1-5 characters.");
+        }
+    }
 
-    public Game promptGameDetails (int game_code) {
-        System.out.print("Enter branch code: ");
-        String branch_code = scanner.nextLine();
-
+    public Game promptGameDetails (int game_code, String branch_code) {
         System.out.print("Enter game name: ");
         String game_name = scanner.nextLine();
 
