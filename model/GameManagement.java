@@ -6,11 +6,12 @@ import static connection.DatabaseConnection.getConnection;
 
 public class GameManagement {
 
-    public boolean isGameCodeTaken (int game_code) throws SQLException {
-        String sql = "SELECT 1 FROM game WHERE game_code = ?";
+	public boolean isGameCodeTaken (int game_code, String branch_code) throws SQLException {
+        String sql = "SELECT 1 FROM game WHERE game_code = ? AND branch_code = ?";
         try (Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, game_code);
+            stmt.setString(2, branch_code);
             try (ResultSet rs = stmt.executeQuery()) {
                 return rs.next();
             }
@@ -35,29 +36,30 @@ public class GameManagement {
     }
 
     public boolean edit (Game game) throws SQLException {
-        String sql = "UPDATE game SET branch_code = ?, game_name = ?, genre = ?, quantity_in_stock = ?, discontinued = ? WHERE game_code = ?";
+        String sql = "UPDATE game SET game_name = ?, genre = ?, quantity_in_stock = ?, discontinued = ? WHERE game_code = ? AND branch_code = ?";
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, game.getBranchCode());
-            stmt.setString(2, game.getGameName());
-            stmt.setString(3, game.getGenre());
-            stmt.setInt(4, game.getQuantityInStock());
-            stmt.setBoolean(5, game.isDiscontinued());
-            stmt.setInt(6, game.getGameCode());
+            stmt.setString(1, game.getGameName());
+            stmt.setString(2, game.getGenre());
+            stmt.setInt(3, game.getQuantityInStock());
+            stmt.setBoolean(4, game.isDiscontinued());
+            stmt.setInt(5, game.getGameCode());
+            stmt.setString(6, game.getBranchCode());
 
             return stmt.executeUpdate() > 0;
         }
     }
 
-    public boolean remove (int game_code) throws SQLException {
-        String sql = "DELETE FROM game WHERE game_code = ?";
+    public boolean remove (int game_code, String branch_code) throws SQLException {
+        String sql = "DELETE FROM game WHERE game_code = ? AND branch_code = ?";
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, game_code);
+            stmt.setString(2, branch_code);
 
             return stmt.executeUpdate() > 0;
         }
