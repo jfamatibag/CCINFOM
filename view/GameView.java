@@ -7,7 +7,7 @@ public class GameView {
     static Scanner scanner = new Scanner(System.in);
 
     public int displayGameMenu () {
-        System.out.print("\n");
+    	System.out.println("\n--- Game Menu ---");
         System.out.println("1. Add");
         System.out.println("2. Edit");
         System.out.println("3. Remove");
@@ -24,7 +24,7 @@ public class GameView {
     }
 
     public int displayViewMenu () {
-        System.out.print("\n");
+    	System.out.println("\n--- Game View---");
         System.out.println("1. All Games");
         System.out.println("2. Filter by Genre");
         System.out.println("3. Filter by Name");
@@ -95,8 +95,9 @@ public class GameView {
         }
         
         for (Game game : games) {
-            System.out.printf("Game Code: %d | Branch Code: %s |  Game Name: %s | Genre: %s | Stock: %d |  Discontinued: %b\n",
-                    game.getGameCode(), game.getBranchCode(), game.getGameName(), game.getGenre(), game.getQuantityInStock(), game.isDiscontinued());
+            System.out.printf("Game Code: %-4d | Branch Code: %-4s |  Game Name: %-18s | Genre: %-15s | Stock: %-3d |  Discontinued: %b\n",
+                    game.getGameCode(), game.getBranchCode(), game.getGameName(), game.getGenre(),
+                    game.getQuantityInStock(), game.isDiscontinued());
         }
     }
 

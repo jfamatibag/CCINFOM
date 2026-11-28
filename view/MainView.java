@@ -6,8 +6,7 @@ public class MainView {
     static Scanner scanner = new Scanner(System.in);
 
     public int displayMainMenu () {
-        System.out.print("\n");
-        System.out.println("=== GAME STORE ===");
+        System.out.println("\n=== GAME STORE ===");
         System.out.println("1. Branches");
         System.out.println("2. Games");
         System.out.println("3. Customers");

@@ -7,7 +7,7 @@ public class BranchView {
     static Scanner scanner = new Scanner(System.in);
 
     public int displayBranchMenu () {
-        System.out.print("\n");
+        System.out.println("\n--- Branch Menu ---");
         System.out.println("1. Add");
         System.out.println("2. Edit");
         System.out.println("3. Remove");
@@ -24,7 +24,7 @@ public class BranchView {
     }
 
     public int displayViewMenu () {
-        System.out.print("\n");
+    	System.out.println("\n--- Branch View---");
         System.out.println("1. All Branches");
         System.out.println("2. Filter by Name");
         System.out.println("3. Filter by City");
@@ -72,7 +72,7 @@ public class BranchView {
         }
 
         for (Branch branch : branches) {
-            System.out.printf("Branch Code: %s | Branch Name: %s | Street Address: %s | City: %s\n",
+            System.out.printf("Branch Code: %-4s | Branch Name: %-24s | Street Address: %s | City: %s\n",
                     branch.getBranchCode(), branch.getBranchName(), branch.getStreetAddress(), branch.getCity());
         }
     }

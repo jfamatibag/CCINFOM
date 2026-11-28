@@ -9,7 +9,7 @@ public class CustomerView {
     static Scanner scanner = new Scanner(System.in);
 
     public int displayCustomerMenu () {
-        System.out.print("\n");
+    	System.out.println("\n--- Customer Menu ---");
         System.out.println("1. Add");
         System.out.println("2. Edit");
         System.out.println("3. Remove");
@@ -26,7 +26,7 @@ public class CustomerView {
     }
 
     public int displayViewMenu () {
-        System.out.print("\n");
+        System.out.println("\n--- Customer View---");
         System.out.println("1. All Customers");
         System.out.println("2. Sort by Name");
         System.out.println("3. Sort by Membership Points");
@@ -107,8 +107,9 @@ public class CustomerView {
         }
 
         for (Customer customer : customers) {
-            System.out.printf("Customer Number: %d | Last Name: %s | First Name: %s | Registration Date: %s | Membership Points: %d\n",
-                    customer.getCustomerNumber(), customer.getLastName(), customer.getFirstName(), customer.getRegistrationDate(), customer.getMembershipPoints());
+            System.out.printf("Customer Number: %-4d | Last Name: %-18s | First Name: %-18s | Registration Date: -10%s | Membership Points: %d\n",
+                    customer.getCustomerNumber(), customer.getLastName(), customer.getFirstName(), 
+                    customer.getRegistrationDate(), customer.getMembershipPoints());
         }
     }
 

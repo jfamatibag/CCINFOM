@@ -2,6 +2,9 @@ package controller;
 
 import view.MainView;
 
+//javac -cp ".;mysql-connector-j-26.10.0.jar" connection\*.java model\*.java view\*.java controller\*.java
+//java -cp ".;mysql-connector-j-26.10.0.jar" controller.MainController
+
 public class MainController {
 
     public static void main (String [] args){
@@ -19,10 +22,10 @@ public class MainController {
                     CustomerController.main(args);
                     break;
                 case 4:
-                    //SaleController.main(args);
+                    SalesController.main(args);
                     break;
                 case 5:
-                    //ReportController.main(args);
+                   ReportController.main(args);
                     break;
                 case 6:
                     mainView.displayExit();
